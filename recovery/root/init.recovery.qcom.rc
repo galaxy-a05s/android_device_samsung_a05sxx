@@ -36,7 +36,7 @@ on init
     export LD_LIBRARY_PATH /system/lib64:/system/lib64/hw:/vendor/lib64:/vendor/lib64/hw
     symlink /dev/block/by-name/steady /dev/block/steady
     symlink /dev/block/by-name/persistent /dev/block/persistent
-    setprop sys.usb.configfs 1
+    setprop sys.usb.configfs 0
     setprop prepdecrypt.setpatch true
     setprop prepdecrypt.loglevel 2
 
