@@ -81,7 +81,16 @@
       "Name": "FreezerState",
       "Controller": "freezer",
       "File": "cgroup.freeze"
-    }
+    },
+    {
+      "Name": "STuneBoost",
+      "Controller": "schedtune",
+      "File": "schedtune.boost"
+    },
+    {
+      "Name": "STunePreferIdle",
+      "Controller": "schedtune",
+      "File": "schedtune.prefer_idle"
   ],
 
   "Profiles": [
@@ -99,6 +108,31 @@
       ]
     },
     {
+      "Name": "CpuPolicySpread",
+      "Actions": [
+        {
+          "Name": "SetAttribute",
+          "Params":
+          {
+            "Name": "STunePreferIdle",
+            "Value": "1"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "CpuPolicyPack",
+      "Actions": [
+        {
+          "Name": "SetAttribute",
+          "Params":
+          {
+            "Name": "STunePreferIdle",
+            "Value": "0"
+              }
+        }
+      ]
+    },
       "Name": "Frozen",
       "Actions": [
         {
