@@ -183,3 +183,7 @@ TW_NO_LEGACY_PROPS := true
 
 # Modules
 TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/recovery/root/lib/modules)\")
+
+# Treble
+PRODUCT_ENFORCE_VINTF_MANIFEST := true
+PRODUCT_FULL_TREBLE := true
