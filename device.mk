@@ -9,7 +9,6 @@ LOCAL_PATH := device/samsung/a05s
 
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 32
-PRODUCT_TARGET_VNDK_VERSION := 32
 
 # Dynamic
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -18,6 +17,12 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock \
     fastbootd 
+
+PRODUCT_PACKAGES += \
+    otapreopt_script \
+    update_engine \
+    update_engine_sideload \
+    update_verifier \
 
 # Health
 PRODUCT_PACKAGES += \
@@ -30,6 +35,8 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libdmabufheap \
     libion \
     libxml2 \
+    libkeymint \
+    libkeymint_support \
     libnetutils \
     vendor.display.config@1.0 \
     vendor.display.config@2.0 \
@@ -38,11 +45,13 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libdmabufheap.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymint.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymint_support.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libnetutils.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so 
 
-# QCOM Encryption
+# QCOM
 PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
@@ -51,9 +60,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
-# Additional Packages
-PRODUCT_PACKAGES += \
-    otapreopt_script \
-    update_engine \
-    update_engine_sideload \
-    update_verifier \
+# VNDK
+PRODUCT_TARGET_VNDK_VERSION := 32

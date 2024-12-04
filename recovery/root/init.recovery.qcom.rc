@@ -26,18 +26,20 @@
 #
 import /init.recovery.qcom_decrypt.rc
 import /init.recovery.display.rc
+import /init.recovery.samsung.rc 
+
+on early-init
+    mkdir /mnt/vendor/efs 0771 radio system
 
 on init
     write /sys/class/backlight/panel0-backlight/brightness 200
     export LD_LIBRARY_PATH /system/lib64:/system/lib64/hw:/vendor/lib64:/vendor/lib64/hw
+    symlink /dev/block/by-name/steady /dev/block/steady
+    symlink /dev/block/by-name/persistent /dev/block/persistent
     setprop sys.usb.configfs 1
     setprop prepdecrypt.setpatch true
     setprop prepdecrypt.loglevel 2
 
-    start vendor.qseecomd 
-    start keymaster-4-0 
-    start vendor.gatekeeper-1-0
-    start vendor.keymint-default
 
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
@@ -57,46 +59,3 @@ on fs
 
     export ANDROID_ROOT /system_root
 
-on late-fs
-
-    # Mount RW partitions which need run fsck
-    mount_all /vendor/etc/fstab.${ro.boot.hardware.platform} --late
-
-on post-fs
-    mkdir /mnt/vendor/efs/DAK 0775 root root
-    restorecon --recursive --force /mnt/vendor/efs/DAK
-    chown root root /mnt/vendor/efs/DAK/gakkeybox
-    chmod 0644 /mnt/vendor/efs/DAK/gakkeybox
-
-on post-fs-data
-    mkdir /data/vendor/keymaster 0775 root root
-    mkdir /data/vendor/gatekeeper 0770 root root
-
-service vendor.health-recovery /system/bin/android.hardware.health-service.qti_recovery
-    class hal
-    seclabel u:r:hal_health_default:s0
-    user root
-    group root
-    capabilities WAKE_ALARM BLOCK_SUSPEND
-    file /dev/kmsg w
-    seclabel u:r:recovery:s0
-
-service vendor.qseecomd /system/bin/qseecomd 
-    socket notify-topology stream 660 root drmrpc 
-    class core 
-    user root 
-    group root drmrpc 
-    seclabel u:r:recovery:s0
-
-service vendor.gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service 
-    interface android.hardware.gatekeeper@1.0::IGatekeeper default 
-    class hal 
-    user root 
-    group root 5678
-    seclabel u:r:recovery:s0  
-
-service vendor.keymint-default /system/bin/android.hardware.security.keymint-service
-    class early_hal
-    user root
-    group root drmrpc
-    seclabel u:r:recovery:s0
