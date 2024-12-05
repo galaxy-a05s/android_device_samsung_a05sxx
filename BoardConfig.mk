@@ -96,6 +96,17 @@ BOARD_MKBOOTIMG_ARGS:= \
 --tags_offset=0x01e00000 \
 --header_version=$(BOARD_BOOTIMG_HEADER_VERSION) \
 --dtb=$(TARGET_PREBUILT_DTB)
+BOARD_ROOT_EXTRA_FOLDERS := \
+    carrier \
+    efs \
+    keydata \
+    keyrefuge \
+    metadata \
+    misc \
+    omr \
+    optics \
+    prism \
+    spu
 
 # Sourcecode
 BOARD_KERNEL_IMAGE_NAME := Image
