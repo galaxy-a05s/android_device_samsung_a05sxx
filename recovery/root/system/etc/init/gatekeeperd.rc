@@ -5,6 +5,7 @@ service gatekeeperd /system/bin/gatekeeperd /data/misc/gatekeeper
     class late_start
     user root
     group root 5678 5666
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
     task_profiles ServiceCapacityLow
     seclabel u:r:recovery:s0
 
