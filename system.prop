@@ -12,3 +12,7 @@ persist.sys.fuse.passthrough.enable=true
 
 # Dynamic Partitions
 ro.boot.dynamic_partitions=true
+
+# AVB
+ro.boot.avb_version=1.0
+ro.boot.vbmeta.avb_version=1.0
