@@ -8,7 +8,7 @@
 ## Sync
     repo sync
 ## Clone galaxy a05s TWRP tree
-    git clone https://github.com/galaxy-a05s/android_device_samsung_a05ssxx.git -b twrp-14 device/samsung/a05s
+    git clone https://github.com/galaxy-a05s/android_device_samsung_a05sxx.git -b twrp-14 device/samsung/a05s
 ## Prepare
     export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch twrp_a05s-eng
 ## Repopick Patches
