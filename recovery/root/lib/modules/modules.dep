@@ -159,6 +159,7 @@
 /lib/modules/usb_f_conn_gadget.ko:
 /lib/modules/i2c-msm-geni.ko: /lib/modules/msm_gpi.ko /lib/modules/qcom_ipc_logging.ko /lib/modules/sec_debug.ko /lib/modules/minidump.ko /lib/modules/smem.ko
 /lib/modules/memory_dump_v2.ko: /lib/modules/sec_debug.ko /lib/modules/qcom-scm.ko /lib/modules/minidump.ko /lib/modules/smem.ko
+/lib/modules/qrng_dlkm.ko:
 /lib/modules/sg.ko:
 /lib/modules/qcom_iommu_util.ko: /lib/modules/secure_buffer.ko /lib/modules/qcom-scm.ko
 /lib/modules/usb_f_cdev.ko:
@@ -176,6 +177,7 @@
 /lib/modules/qcom_soc_wdt.ko: /lib/modules/qcom_wdt_core.ko /lib/modules/qcom-scm.ko /lib/modules/minidump.ko /lib/modules/smem.ko
 /lib/modules/stm_ftrace.ko: /lib/modules/stm_core.ko
 /lib/modules/icc-rpm.ko: /lib/modules/rpm-smd.ko /lib/modules/qcom-mpm.ko
+/lib/modules/tz_log_dlkm.ko: /lib/modules/qcom-scm.ko
 /lib/modules/qcom-vadc-common.ko:
 /lib/modules/qcom_glink_rpm.ko: /lib/modules/qcom_glink.ko /lib/modules/qcom_ipc_logging.ko /lib/modules/sec_debug.ko /lib/modules/minidump.ko /lib/modules/smem.ko
 /lib/modules/qcom_va_minidump.ko: /lib/modules/minidump.ko /lib/modules/smem.ko
