@@ -1,3 +1,7 @@
+on init
+    start vaultkeeper
+    start vaultkeeper_hal
+
 # VaultKeeper
 service vaultkeeper /vendor/bin/vaultkeeperd
     class core
@@ -17,4 +21,4 @@ service vaultkeeper_hal /vendor/bin/vendor.samsung.hardware.security.vaultkeeper
 
 on late-fs
     # vaultkeeper
-    mkdir /dev/socket/vaultkeeper 0770 system system
+    mkdir /dev/socket/vaultkeeper 0770 root root

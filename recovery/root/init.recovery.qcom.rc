@@ -34,11 +34,9 @@ on early-init
 on init
     write /sys/class/backlight/panel0-backlight/brightness 200
     export LD_LIBRARY_PATH /system/lib64:/system/lib64/hw:/vendor/lib64:/vendor/lib64/hw
-    symlink /dev/block/by-name/steady /dev/block/steady
-    symlink /dev/block/by-name/persistent /dev/block/persistent
+    setprop sys.usb.configfs 1
     setprop prepdecrypt.setpatch true
     setprop prepdecrypt.loglevel 2
-
 
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
