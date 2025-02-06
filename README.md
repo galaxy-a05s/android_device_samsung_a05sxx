@@ -9,8 +9,8 @@
     repo sync
 ## Clone galaxy A057G tree
     git clone https://github.com/galaxy-a05s/android_device_samsung_a05sxx.git -b android-14 device/samsung/a05s
-## Clone a05s common tree
-    git clone https://github.com/galaxy-a05s/android_device_samsung_a05s-common.git -b android-14 device/samsung/a05s-common
+## Clone bengal common tree
+    git clone https://github.com/galaxy-a05s/android_device_samsung_bengal-common.git -b android-14 device/samsung/bengal-common
 ## Prepare
     export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch twrp_a05s-eng
 ## Run the Build Command
