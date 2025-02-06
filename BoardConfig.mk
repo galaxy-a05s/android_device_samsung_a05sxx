@@ -69,8 +69,7 @@ BOARD_KERNEL_CMDLINE := video=vfb:640x400,bpp=32,memsize=3072000 \
                         androidboot.memcg=1 \
                         androidboot.load_modules_parallel=true \
                         androidboot.usbcontroller=4e00000.dwc3 \
-                        loop.max_part=7 \
-                        androidboot.selinux=permissive
+                        loop.max_part=7 
 
 # Kernel
 TARGET_KERNEL_ARCH := arm64
@@ -149,7 +148,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_USES_METADATA_PARTITION := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
-TW_INCLUDE_CRYPTO := false
+TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := false
 
 # Super/Dynamic
@@ -201,9 +200,6 @@ TW_USE_NEW_MINADBD := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_INCLUDE_FASTBOOTD := true
 TW_HAS_DOWNLOAD_MODE := true
-
-# Copy Out
-TARGET_COPY_OUT_VENDOR := vendor
 
 # Props
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
