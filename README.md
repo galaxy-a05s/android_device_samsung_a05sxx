@@ -3,8 +3,8 @@
 Blocking checks
 - [x] Correct screen/recovery size
 - [ ] Working Touch, screen - Testing
-- [ ] Backup to internal/microSD
-- [ ] Restore from internal/microSD
+- [x] Backup to internal/microSD
+- [x] Restore from internal/microSD
 - [x] reboot to system
 - [x] ADB
 
@@ -25,11 +25,11 @@ Minor checks
 - [x] reboot to recovery
 - [x] poweroff
 - [x] battery level
-- [ ] temperature - Testing
+- [x] temperature
 - [ ] encrypted backups
 - [ ] input devices via USB (USB-OTG) - keyboard, mouse and disks (not supported by the device)
 - [ ] USB mass storage export
-- [ ] set brightness - Testing
+- [x] set brightness
 - [ ] vibrate - Unlikely
 - [ ] screenshot - Testing
 - [x] partition SD card
