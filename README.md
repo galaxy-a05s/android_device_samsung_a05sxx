@@ -2,7 +2,7 @@
 
 Blocking checks
 - [x] Correct screen/recovery size
-- [ ] Working Touch, screen - Testing
+- [ ] Working Touch, screen - Ilitek, and Goodix confirmed working
 - [x] Backup to internal/microSD
 - [x] Restore from internal/microSD
 - [x] reboot to system
@@ -17,7 +17,7 @@ Medium checks
 - [ ] backup/restore to/from external (USB-OTG) storage (not supported by the device)
 - [ ] backup/restore to/from adb (https://gerrit.omnirom.org/#/c/15943/)
 - [ ] decrypt /data - Unlikely
-- [ ] Correct date - Testing
+- [ ] Correct date - BROKEN
 
 Minor checks
 - [ ] MTP export - Testing
@@ -27,11 +27,11 @@ Minor checks
 - [x] battery level
 - [x] temperature
 - [ ] encrypted backups
-- [ ] input devices via USB (USB-OTG) - keyboard, mouse and disks (not supported by the device)
+- [ ] input devices via USB (USB-OTG) - keyboard, mouse and disks (not supported by the device) - WORK IN PROGRESS
 - [ ] USB mass storage export
 - [x] set brightness
-- [ ] vibrate - Unlikely
-- [ ] screenshot - Testing
+- [ ] vibrate - Broken
+- [x] screenshot
 - [x] partition SD card
 
 # How-to compile it:
