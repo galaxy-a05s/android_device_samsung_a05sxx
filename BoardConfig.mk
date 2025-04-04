@@ -16,8 +16,5 @@ BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 # Inherit from common tree
 include device/samsung/bengal-common/BoardConfigCommon.mk
 
-# Compression
-BOARD_RAMDISK_USE_LZ4 := true
-
 # Version
 TW_DEVICE_VERSION := MrFluffyOven_A057G
