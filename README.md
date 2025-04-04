@@ -20,15 +20,15 @@ Medium checks
 - [ ] Correct date - After research it appears this is broken for most twrp versions
 
 Minor checks
-- [ ] MTP export
+- [x] MTP export
 - [x] reboot to bootloader
 - [x] reboot to recovery
 - [x] poweroff
-- [x] battery level
+- [ ] battery level
 - [x] temperature
 - [ ] encrypted backups
 - [x] input devices via USB (USB-OTG) - keyboard, mouse and disks (not supported by the device) - WORK IN PROGRESS
-- [ ] USB mass storage export
+- [x] USB mass storage export
 - [x] set brightness
 - [ ] vibrate - TW_NO_HAPTICS := true
 - [x] screenshot
