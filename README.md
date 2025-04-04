@@ -2,7 +2,7 @@
 
 Blocking checks
 - [x] Correct screen/recovery size
-- [ ] Working Touch, screen - Ilitek, and Goodix confirmed working
+- [ ] Working Touch, screen - Ilitek, and Goodix confirmed working, Himax not working, Chipone Unknown
 - [x] Backup to internal/microSD
 - [x] Restore from internal/microSD
 - [x] reboot to system
@@ -16,8 +16,8 @@ Medium checks
 - [x] all important partitions listed in mount/backup lists
 - [ ] backup/restore to/from external (USB-OTG) storage (not supported by the device)
 - [ ] backup/restore to/from adb (https://gerrit.omnirom.org/#/c/15943/)
-- [ ] decrypt /data - Unlikely
-- [ ] Correct date - BROKEN
+- [ ] decrypt /data - Unlikely, Broken on samsung
+- [ ] Correct date - After research it appears this is broken for most twrp versions
 
 Minor checks
 - [ ] MTP export - Testing
@@ -27,10 +27,10 @@ Minor checks
 - [x] battery level
 - [x] temperature
 - [ ] encrypted backups
-- [ ] input devices via USB (USB-OTG) - keyboard, mouse and disks (not supported by the device) - WORK IN PROGRESS
+- [x] input devices via USB (USB-OTG) - keyboard, mouse and disks (not supported by the device) - WORK IN PROGRESS
 - [ ] USB mass storage export
 - [x] set brightness
-- [ ] vibrate - Broken
+- [ ] vibrate - TW_NO_HAPTICS := true
 - [x] screenshot
 - [x] partition SD card
 
